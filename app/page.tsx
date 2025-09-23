@@ -104,7 +104,7 @@ export default function Portfolio() {
       rating: 5,
     },
     {
-      name: "Nithya shree",
+      name: "Hema shree",
       role: "CTO",
       company: "StartupXYZ",
       content:
@@ -112,7 +112,7 @@ export default function Portfolio() {
       rating: 5,
     },
     {
-      name: "Anitha R",
+      name: "Hema baby",
       role: "Design Lead",
       company: "Creative Agency",
       content: "Karthik perfectly translated our designs into pixel-perfect, responsive web applications.",
