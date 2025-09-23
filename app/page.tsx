@@ -49,29 +49,31 @@ export default function Portfolio() {
     { name: "Cloud Computing", level: 75 },
   ]
 
+
+  
   const projects = [
-    {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with React, Node.js, and Stripe integration",
-      image: "/modern-ecommerce-website.png",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      link: "#",
-    },
-    {
-      title: "AI-Powered Dashboard",
-      description: "Analytics dashboard with machine learning insights and real-time data",
-      image: "/ai-analytics-dashboard.png",
-      tech: ["Next.js", "Python", "TensorFlow", "D3.js"],
-      link: "#",
-    },
-    {
-      title: "Mobile Banking App",
-      description: "Secure mobile banking application with biometric authentication",
-      image: "/mobile-banking-app.png",
-      tech: ["React Native", "Firebase", "Plaid API"],
-      link: "#",
-    },
-  ]
+  {
+    title: "E-Commerce Platform",
+    description: "Full-stack e-commerce solution with React, Node.js, and Stripe integration",
+    image: "/modern-ecommerce-website.png",
+    tech: ["React", "Node.js", "MongoDB", "Stripe"],
+    link: "https://raju-real-estate.vercel.app",
+  },
+  {
+    title: "AI-Powered Dashboard",
+    description: "Analytics dashboard with machine learning insights and real-time data",
+    image: "/ai-analytics-dashboard.png",
+    tech: ["Next.js", "Python", "TensorFlow", "D3.js"],
+    link: "https://student-three-sigma.vercel.app",
+  },
+  {
+    title: "Mobile Banking App",
+    description: "Secure mobile banking application with biometric authentication",
+    image: "/mobile-banking-app.png",
+    tech: ["React Native", "Firebase", "Plaid API"],
+    link: "https://rajutimes.vercel.app",
+  },
+]
 
   const experiences = [
     {
@@ -322,7 +324,7 @@ export default function Portfolio() {
               <Button
                 size="lg"
                 onClick={() => scrollToSection("contact")}
-                className="btn-magnetic neon-border focus-ring"
+                className="btn-magnetic neon-border text-shadow-black focus-ring"
               >
                 Let's Work Together
               </Button>
@@ -412,59 +414,66 @@ export default function Portfolio() {
       </section>
 
       <section id="projects" className="py-20 bg-muted/30">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-responsive-3xl font-bold font-serif mb-4 gradient-text animate-glow">
-              Featured Projects
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-balance">
-              A showcase of my recent work and creative solutions
-            </p>
-          </div>
+  <div className="max-w-6xl mx-auto px-4">
+    <div className="text-center mb-16">
+      <h2 className="text-responsive-3xl font-bold font-serif mb-4 gradient-text animate-glow">
+        Featured Projects
+      </h2>
+      <p className="text-muted-foreground max-w-2xl mx-auto text-balance">
+        A showcase of my recent work and creative solutions
+      </p>
+    </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Card
-                key={project.title}
-                className="group hover-lift glass-card neon-border animate-scale-in focus-ring"
-                style={{ animationDelay: `${index * 0.2}s` }}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project, index) => (
+        <Card
+          key={project.title}
+          className="group hover-lift glass-card neon-border animate-scale-in focus-ring"
+          style={{ animationDelay: `${index * 0.2}s` }}
+        >
+          <div className="relative overflow-hidden rounded-t-lg">
+            <img
+              src={project.image || "/placeholder.svg"}
+              alt={project.title}
+              className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-center pb-4">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-center pb-4">
-                    <Button variant="secondary" size="sm" className="btn-magnetic">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      View Project
-                    </Button>
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-responsive-lg">{project.title}</CardTitle>
-                  <CardDescription className="text-responsive-sm">{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, techIndex) => (
-                      <Badge
-                        key={tech}
-                        variant="secondary"
-                        className="animate-fade-in-up"
-                        style={{ animationDelay: `${index * 0.2 + techIndex * 0.1}s` }}
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                <Button variant="secondary" size="sm" className="btn-magnetic">
+                  <ExternalLink className="h-4 w-4 mr-2" />
+                  View Project
+                </Button>
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+          <CardHeader>
+            <CardTitle className="text-responsive-lg">{project.title}</CardTitle>
+            <CardDescription className="text-responsive-sm">{project.description}</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-wrap gap-2">
+              {project.tech.map((tech, techIndex) => (
+                <Badge
+                  key={tech}
+                  variant="secondary"
+                  className="animate-fade-in-up"
+                  style={{ animationDelay: `${index * 0.2 + techIndex * 0.1}s` }}
+                >
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Experience Section */}
       <section id="experience" className="py-20">
@@ -763,22 +772,40 @@ export default function Portfolio() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="animate-slide-in-left">
-              <h3 className="text-responsive-2xl font-bold mb-6">Get in Touch</h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 hover-lift p-3 rounded-lg glass-card">
-                  <Mail className="h-5 w-5 text-primary animate-float" />
-                  <span className="text-responsive-base">karthikv1222003@gmail.com</span>
-                </div>
-                <div className="flex items-center gap-3 hover-lift p-3 rounded-lg glass-card">
-                  <Phone className="h-5 w-5 text-primary animate-float" />
-                  <span className="text-responsive-base">+91 (966) 333-9089</span>
-                </div>
-                <div className="flex items-center gap-3 hover-lift p-3 rounded-lg glass-card">
-                  <MapPin className="h-5 w-5 text-primary animate-float" />
-                  <span className="text-responsive-base">kote, kolar</span>
-                </div>
-              </div>
+  <div className="animate-slide-in-left">
+    <h3 className="text-responsive-2xl font-bold mb-6">Get in Touch</h3>
+    <div className="space-y-4">
+      
+      {/* Email */}
+      <a
+        href="mailto:karthikv1222003@gmail.com"
+        className="flex items-center gap-3 hover-lift p-3 rounded-lg glass-card"
+      >
+        <Mail className="h-5 w-5 text-primary animate-float" />
+        <span className="text-responsive-base">karthikv1222003@gmail.com</span>
+      </a>
+
+      {/* Phone */}
+      <a
+        href="tel:+919663339089"
+        className="flex items-center gap-3 hover-lift p-3 rounded-lg glass-card"
+      >
+        <Phone className="h-5 w-5 text-primary animate-float" />
+        <span className="text-responsive-base">+91 9663339089</span>
+      </a>
+
+      {/* Location */}
+      <a
+        href="https://maps.google.com/?q=kote, kolar"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-3 hover-lift p-3 rounded-lg glass-card"
+      >
+        <MapPin className="h-5 w-5 text-primary animate-float" />
+        <span className="text-responsive-base">kote, kolar</span>
+      </a>
+    </div>
+
 
               <div className="mt-8">
                 <h4 className="font-semibold mb-4 text-responsive-lg">Follow Me</h4>
@@ -802,19 +829,30 @@ export default function Portfolio() {
                 <CardDescription className="text-responsive-sm">I'll get back to you within 24 hours</CardDescription>
               </CardHeader>
               <CardContent>
-                <form className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <Input placeholder="First Name" className="focus-ring" />
-                    <Input placeholder="Last Name" className="focus-ring" />
-                  </div>
-                  <Input type="email" placeholder="Email Address" className="focus-ring" />
-                  <Input placeholder="Subject" className="focus-ring" />
-                  <Textarea placeholder="Your Message" rows={5} className="focus-ring" />
-                  <Button className="w-full btn-magnetic neon-border focus-ring">
-                    <MessageSquare className="h-4 w-4 mr-2" />
-                    Send Message
-                  </Button>
-                </form>
+                <form 
+  className="space-y-4"
+  onSubmit={(e) => {
+    e.preventDefault();
+    alert("Message sent! 🚀"); // replace with EmailJS, Formspree, or API call
+  }}
+>
+  <div className="grid grid-cols-2 gap-4">
+    <Input name="firstName" placeholder="First Name" className="focus-ring" />
+    <Input name="lastName" placeholder="Last Name" className="focus-ring" />
+  </div>
+  <Input type="email" name="email" placeholder="Email Address" className="focus-ring" />
+  <Input name="subject" placeholder="Subject" className="focus-ring" />
+  <Textarea name="message" placeholder="Your Message" rows={5} className="focus-ring" />
+
+  <Button 
+    type="submit"
+    className="w-full btn-magnetic neon-border text-black focus-ring"
+  >
+    <MessageSquare className="h-4 w-4 mr-2" />
+    Send Message
+  </Button>
+</form>
+
               </CardContent>
             </Card>
           </div>
