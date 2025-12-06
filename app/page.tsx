@@ -73,6 +73,13 @@ export default function Portfolio() {
     tech: ["React Native", "Firebase", "Plaid API"],
     link: "https://rajutimes.vercel.app",
   },
+     {
+    title: "Recipe Finder",
+    description: "chinese Recipe Finder",
+    image: "/ai-analytics-dashboard.png",
+    tech: ["HTML CSS JAVA "],
+    link: "https://recipe-finder-tau-vert.vercel.app",
+  },
 ]
 
   const experiences = [
