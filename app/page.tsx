@@ -840,6 +840,24 @@ export default function Portfolio() {
   className="space-y-4"
   onSubmit={(e) => {
     e.preventDefault();
+    
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID",   // from EmailJS
+        "YOUR_TEMPLATE_ID",  // from EmailJS
+        formRef.current,
+        "YOUR_PUBLIC_KEY"    // from EmailJS
+      )
+      .then(
+        () => {
+          alert("Message Sent Successfully! 🚀");
+        },
+        (error) => {
+          alert("Failed to send message ❌");
+          console.error(error);
+        }
+      );
+  };
     alert("Message sent! 🚀"); // replace with EmailJS, Formspree, or API call
   }}
 >
