@@ -77,7 +77,7 @@ export default function Portfolio() {
     title: "Recipe Finder",
     description: "chinese Recipe Finder",
     image: "/ai-analytics-dashboard.png",
-    tech: ["HTML CSS JAVA "],
+    tech: ["HTML","CSS","JAVA","API"],
     link: "https://recipe-finder-tau-vert.vercel.app",
   },
 ]
